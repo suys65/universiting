@@ -5,6 +5,7 @@ const env = process.env.NODE_ENV || 'development';
 const config = require('../config/config')[env];
 const User = require('./user');
 const Checknum = require('./checknum');
+const Room = require('./room');
 
 const db = {};
 const sequelize = new Sequelize(
@@ -17,7 +18,10 @@ db.Checknum = Checknum;
 
 User.init(sequelize);
 Checknum.init(sequelize);
+Room.init(sequelize);
 
 User.associate = db;
 Checknum.associate = db;
-module.exports = db.User,db.Checknum;
+Room.associate = db;
+
+module.exports = db

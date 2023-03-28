@@ -1,7 +1,6 @@
 const nodemailer = require('nodemailer');
 const User = require('../models/user')
 const Checknum = require('../models/checknum')
-const { smtpTransport } = require('../config/email');
 const XLSX = require('xlsx')
 const express = require('express');
 const dotenv = require('dotenv')
