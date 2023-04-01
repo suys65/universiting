@@ -59,7 +59,7 @@ module.exports = class User extends Sequelize.Model {
     });
   }
   static associate(db) {
-    db.User.belongToMany(db.Room, {through: 'RoomUser'})
+    db.User.belongsToMany(db.Room, {through: 'RoomUser'})
   }
 
 };
