@@ -6,7 +6,7 @@ module.exports = class Room extends Sequelize.Model {
       name: {//이름
         type: Sequelize.STRING(10),
         allowNull: false,
-        unique: true,
+        //unique: true,
       },
       member: {//멤버 수
         type: Sequelize.INTEGER(2),
@@ -35,9 +35,9 @@ module.exports = class Room extends Sequelize.Model {
       collate: 'utf8_general_ci',
     });
   }
-
+  
   static associate(db) {
-    db.Room.belongToMany(db.User, {through: 'RoomUser'})
+    db.Room.belongsToMany(db.User, {through: 'RoomUser'})
   }
 
 };
